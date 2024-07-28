@@ -1,8 +1,6 @@
 import React from "react";
 export const MoonIcon = (props) => (
   <svg
-    aria-hidden="true"
-    focusable="false"
     height="1em"
     role="presentation"
     viewBox="0 0 24 24"
