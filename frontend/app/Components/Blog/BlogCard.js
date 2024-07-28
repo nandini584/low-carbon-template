@@ -8,7 +8,7 @@ const BlogCard = () => {
       </h2>
       <div className='flex justify-between text-gray-500 mb-6'>
         <span className='text-sm'>Technology</span>
-        <span className='text-sm'>05 June 2024</span>
+        <time className='text-sm'>05 June 2024</time>
       </div>
       <p className='text-gray-700 text-base'>By Christine Josephous</p>
     </div>
