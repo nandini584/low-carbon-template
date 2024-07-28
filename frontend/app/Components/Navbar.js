@@ -1,6 +1,6 @@
-"use client"
-import React, { useState } from "react";
-import { Switch } from "@nextui-org/react";
+'use client';
+import React, { useState } from 'react';
+import { Switch } from '@nextui-org/react';
 // import { MoonIcon } from "./Icons/MoonIcon";
 // import { SunIcon } from "./Icons/SunIcon";
 

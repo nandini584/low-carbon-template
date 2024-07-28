@@ -1,9 +1,9 @@
-import BlogIndexPage from "../Components/Blog/BlogIndexPage";
+import BlogIndexPage from '../Components/Blog/BlogIndexPage';
 
 export default function Home() {
   return (
     <>
-      <BlogIndexPage/>
+      <BlogIndexPage />
     </>
   );
 }

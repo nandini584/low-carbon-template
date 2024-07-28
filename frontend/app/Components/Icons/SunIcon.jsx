@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 export const SunIcon = (props) => (
   <svg
     height="1em"
