@@ -16,6 +16,6 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}
       - if: steps.node-cache.outputs.cache-hit != 'true'
-        run: npm install --no-audit --no-fund --progress=false
-      - run: npm run format
-      - run: npm run build
+        run: npm install --prefix frontend --no-audit --no-fund --progress=false
+      - run: npm run format --prefix frontend
+      - run: npm run build --prefix frontend
