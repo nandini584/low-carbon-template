@@ -13,7 +13,7 @@ export default function BlogIndexPage() {
       </h1>
       <div className="flex md:flex-row flex-col justify-between lg:mt-24 mt-10">
         <Categories />
-        <div className="flex flex-row flex-wrap gap-8 md:w-[45vw] mt-10 md:mt-0">
+        <div className="flex flex-row flex-wrap md:gap-8 gap-4 md:w-[45vw] mt-10 md:mt-0">
           <BlogCard />
           <BlogCard />
           <BlogCard />
