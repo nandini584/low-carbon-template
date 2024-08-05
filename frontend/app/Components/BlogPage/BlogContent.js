@@ -3,7 +3,11 @@ import Image from 'next/image';
 
 const BlogContent = () => {
   return (
-    <div className="bg-[#F4F4F4] pl-36 pr-96" role="article" aria-labelledby="blog-title">
+    <div
+      className="bg-[#F4F4F4] pl-36 pr-96"
+      role="article"
+      aria-labelledby="blog-title"
+    >
       <p className="text-black text-xl">
         Our approach to web design is rooted in minimalism and sustainability,
         ensuring that every site we build is optimized for energy efficiency and
