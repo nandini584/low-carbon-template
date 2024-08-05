@@ -5,11 +5,11 @@ import RelatedBlogs from './RelatedBlogs';
 
 const BlogPage = () => {
   return (
-    <div>
+    <>
       <BlogHeader />
       <BlogContent />
       <RelatedBlogs />
-    </div>
+    </>
   );
 };
 
