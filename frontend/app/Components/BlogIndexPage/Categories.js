@@ -5,7 +5,7 @@ const Categories = () => {
   return (
     <nav className="w-[30vw]" aria-labelledby="categories-heading">
       <h5
-        className="text-gray-700 text-lg font-semibold mb-5"
+        className="text-gray-700 md:text-lg text-sm font-semibold mb-5"
         id="categories-heading"
       >
         Categories
