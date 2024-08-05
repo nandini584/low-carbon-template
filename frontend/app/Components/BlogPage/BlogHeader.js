@@ -10,7 +10,9 @@ const BlogHeader = () => {
         </span>
       </h1>
       <div className="flex flex-row items-center justify-between md:py-10 py-5 pr-6">
-        <p className="text-black md:text-lg text-base">By Christine Josephous</p>
+        <p className="text-black md:text-lg text-base">
+          By Christine Josephous
+        </p>
         <time className="md:text-lg text-black text-base">05 June 2024</time>
       </div>
       <hr className="border border-gray-200 mb-10" />
