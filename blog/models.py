@@ -12,16 +12,12 @@ from taggit.models import TaggedItemBase
 from wagtail.snippets.models import register_snippet
 from wagtail.images.blocks import ImageChooserBlock
 
+from wagtail.api import APIField
+
 class BlogIndexPage(Page):
-    main_title = models.CharField(max_length=255, default="Sustainable Development")
-
-    content_panels = Page.content_panels + [
-        FieldPanel('main_title', help_text="The page title as you'd like it to be seen by the public")
-    ]
-
     subpage_types = ["blog.BlogPage"]
 
-class BlogPageTag(TaggedItemBase):
+class BlogPageTag(TaggedItemBase): # do it with snnipet
     content_object = ParentalKey(
         'BlogPage',
         related_name='tagged_items',
@@ -29,19 +25,27 @@ class BlogPageTag(TaggedItemBase):
     )
 
 class BlogPage(Page):
-    # Different from the real publication date, for editorial control.
-    blog_title = models.CharField(max_length=255, default="Sustainable Development")
-    date = models.DateField("Post date")
-    introduction = RichTextField(max_length=250)
-    # body = RichTextField(blank=True)
-    authors = ParentalManyToManyField('blog.Author', blank=True)
+    publication_date = models.DateField("Post date")
+    introduction = RichTextField()
+    authors = models.ForeignKey(
+        "blog.Author",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
 
     body = StreamField([
         ('image', ImageChooserBlock()),
-        ('paragraph', blocks.RichTextBlock(max_length=255)),
-    ], default=[("body","default")])
+        ('paragraph', blocks.RichTextBlock()), # add embedblock and blockquote
+    ])
 
-    tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
+    category = models.ForeignKey(
+        "blog.Category",
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
 
     def main_image(self):
         gallery_item = self.gallery_images.first()
@@ -50,22 +54,27 @@ class BlogPage(Page):
         else:
             return None
     
+    api_fields = [
+        APIField('publication_date'),
+        APIField('introduction'),
+        APIField('authors'),
+        APIField('body'),
+        APIField('category'),
+    ]
+
     search_fields = Page.search_fields + [
-        index.SearchField('blog_title'),
         index.SearchField('introduction'),
         index.SearchField('body'),
     ]
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
-            FieldPanel('date'),
-            FieldPanel('authors', widget=forms.CheckboxSelectMultiple),
-            FieldPanel('tags')
+            FieldPanel('publication_date'),
+            FieldPanel('authors', widget=forms.CheckboxSelectMultiple)
         ], heading="Blog information"),
-        FieldPanel('blog_title', help_text="The page title as you'd like it to be seen by the public"),
         FieldPanel('introduction'),
         FieldPanel('body'),
-
+        FieldPanel('category'),
         InlinePanel('gallery_images', label="Gallery images"),
     ]
 
@@ -97,3 +106,17 @@ class Author(models.Model):
 
     class Meta:
         verbose_name_plural = 'Authors'
+
+@register_snippet
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    panels = [
+        FieldPanel('name'),
+    ]
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Categories'
