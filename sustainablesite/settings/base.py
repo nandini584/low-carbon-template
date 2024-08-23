@@ -26,6 +26,8 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     "blog",
     "home",
+    # "corsheaders",
+    "rest_framework",
     'wagtail.api.v2',
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -57,6 +59,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    
 ]
 
 ROOT_URLCONF = "sustainablesite.urls"

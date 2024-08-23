@@ -13,6 +13,44 @@ from wagtail.snippets.models import register_snippet
 from wagtail.images.blocks import ImageChooserBlock
 
 from wagtail.api import APIField
+from rest_framework import serializers
+
+@register_snippet
+class Author(models.Model):
+    name = models.CharField(max_length=255)
+
+    panels = [
+        FieldPanel('name'),
+    ]
+
+    api_fields = [
+        APIField('name'),
+    ]
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Authors'
+
+@register_snippet
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    panels = [
+        FieldPanel('name'),
+    ]
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['name']
 
 class BlogIndexPage(Page):
     subpage_types = ["blog.BlogPage"]
@@ -59,7 +97,7 @@ class BlogPage(Page):
         APIField('introduction'),
         APIField('authors'),
         APIField('body'),
-        APIField('category'),
+        APIField('category', serializer=CategorySerializer()),
     ]
 
     search_fields = Page.search_fields + [
@@ -93,30 +131,3 @@ class BlogPageGalleryImage(Orderable):
         FieldPanel('caption'),
     ]
 
-@register_snippet
-class Author(models.Model):
-    name = models.CharField(max_length=255)
-
-    panels = [
-        FieldPanel('name'),
-    ]
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name_plural = 'Authors'
-
-@register_snippet
-class Category(models.Model):
-    name = models.CharField(max_length=255)
-
-    panels = [
-        FieldPanel('name'),
-    ]
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name_plural = 'Categories'
