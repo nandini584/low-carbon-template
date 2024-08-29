@@ -7,16 +7,18 @@ import { Switch } from '@nextui-org/react';
 const Navbar = () => {
   const [isSelected, setIsSelected] = useState(true);
   return (
-    <header className="bg-lavendar_gray px-36 py-5 flex flex-row items-center justify-between">
+    <header className="bg-lavendar_gray lg:px-36 px-6 md:py-5 py-3 flex flex-row items-center justify-between w-full">
       <div>
-        <p className="text-lg font-extrabold text-blue_violet">ZenWeb</p>
+        <p className="md:text-lg text-base md:font-extrabold font-bold text-blue_violet">
+          ZenWeb
+        </p>
       </div>
       <div className="flex flex-row items-center">
         <nav>
-          <span className="text-base mr-10 text-black cursor-pointer">
+          <span className="md:text-base text-sm md:mr-10 mr-5 text-black cursor-pointer">
             Home
           </span>
-          <span className="text-base mr-10 text-black cursor-pointer">
+          <span className="md:text-base text-sm md:mr-10 mr-5 text-black cursor-pointer">
             Blog
           </span>
         </nav>
