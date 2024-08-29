@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogHeader = () => {
   return (
-    <div className="bg-[#F4F4F4] md:pl-36 pl-6 md:pr-96 md:pt-20 pt-4">
+    <div className="bg-light_gray md:pl-36 pl-6 md:pr-96 md:pt-20 pt-4">
       <h1 className="md:text-5xl text-2xl text-black font-bold">
         Sustainability Web Designs <br />{' '}
         <span className="text-[#490ED9] font-bold">

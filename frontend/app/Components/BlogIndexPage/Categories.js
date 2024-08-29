@@ -15,8 +15,8 @@ const Categories = () => {
         <Category />
         <Category />
         <Category />
+        <Category />
       </div>
-      <Category />
     </nav>
   );
 };

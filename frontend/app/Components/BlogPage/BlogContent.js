@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const BlogContent = () => {
   return (
-    <article className="bg-[#F4F4F4] md:pl-36 md:pr-96 px-6">
+    <article className="bg-light_gray md:pl-36 md:pr-96 px-6">
       <p className="text-black md:text-xl text-base">
         Our approach to web design is rooted in minimalism and sustainability,
         ensuring that every site we build is optimized for energy efficiency and
