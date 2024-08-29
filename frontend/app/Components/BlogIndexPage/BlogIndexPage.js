@@ -4,16 +4,16 @@ import Categories from './Categories';
 
 export default function BlogIndexPage() {
   return (
-    <div className="bg-light_gray px-36 py-20">
-      <h1 className="text-6xl text-black">
+    <main className="bg-light_gray px-36 py-20">
+      <h2 className="text-6xl text-black">
         Sustainability Web Designs <br />{' '}
         <span className="text-blue_violet font-semibold">
           Accessible & best SEO <br /> practices
         </span>
-      </h1>
+      </h2>
       <div className="flex flex-row justify-between mt-24">
         <Categories />
-        <div className="flex flex-row flex-wrap gap-8 w-[45vw]">
+        <section className="flex flex-row flex-wrap gap-8 w-[45vw]">
           <BlogCard />
           <BlogCard />
           <BlogCard />
@@ -22,8 +22,8 @@ export default function BlogIndexPage() {
           <BlogCard />
           <BlogCard />
           <BlogCard />
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

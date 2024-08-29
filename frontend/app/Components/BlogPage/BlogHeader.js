@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const BlogHeader = () => {
   return (
@@ -9,13 +9,13 @@ const BlogHeader = () => {
           Accessible & best SEO practices
         </span>
       </h1>
-      <div className='flex flex-row items-center justify-between py-10'>
+      <div className="flex flex-row items-center justify-between py-10">
         <p className="text-black text-lg">By Christine Josephous</p>
         <time className="text-lg text-black">05 June 2024</time>
       </div>
-      <hr className='border border-gray-200 mb-10'/>
+      <hr className="border border-gray-200 mb-10" />
     </div>
-  )
-}
+  );
+};
 
-export default BlogHeader
+export default BlogHeader;
