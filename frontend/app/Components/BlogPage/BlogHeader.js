@@ -3,7 +3,7 @@ import React from 'react';
 const BlogHeader = () => {
   return (
     <div className="bg-[#F4F4F4] pl-36 pr-96 pt-20">
-      <h1 className="text-5xl text-black" id="blog-title">
+      <h1 className="text-5xl text-black">
         Sustainability Web Designs <br />{' '}
         <span className="text-[#490ED9] font-semibold">
           Accessible & best SEO practices
