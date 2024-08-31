@@ -1,28 +1,53 @@
-import Image from 'next/image';
 import BlogCard from './BlogCard';
 import Categories from './Categories';
 
-export default function BlogIndexPage() {
+async function fetchCategories() {
+  try {
+    const response = await fetch('http://localhost:8000/api/v2/categories/', {
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch categories');
+    }
+
+    const data = await response.json();
+    return data.items; // Adjust based on your API response structure
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+    return [];
+  }
+}
+
+export default async function BlogIndexPage({ index, posts }) {
+  const categories = await fetchCategories();
   return (
-    <main className="bg-light_gray lg:px-36 px-6 lg:py-20 py-5">
-      <h1 className="lg:text-6xl text-2xl font-bold text-black">
-        Sustainability Web Designs <br />{' '}
-        <span className="text-blue_violet font-bold">
-          Accessible & best SEO <br /> practices
-        </span>
-      </h1>
-      <div className="flex md:flex-row flex-col justify-between lg:mt-24 mt-10">
-        <Categories />
-        <section className="flex flex-row flex-wrap gap-8 md:w-[45vw] mt-10 md:mt-0">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-        </section>
+    <main className="bg-light_gray px-36 py-20">
+      {index && (
+        <div className="mb-8">
+          <h1 className="text-6xl text-black">{index.title}</h1>
+        </div>
+      )}
+      <div className="flex flex-row justify-between mt-24">
+        <Categories categories={categories} />
+        <div className="flex flex-row flex-wrap gap-8 w-[45vw]">
+          {posts.length > 0 ? (
+            posts.map((post) => (
+              <BlogCard
+                key={post.id}
+                title={post.title}
+                publication_date={post.publication_date}
+                introduction={post.introduction}
+                category={post.category?.name}
+                authors={post.authors}
+              />
+            ))
+          ) : (
+            <p>No posts available</p>
+          )}
+        </div>
       </div>
     </main>
   );
