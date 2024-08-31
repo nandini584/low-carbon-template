@@ -23,15 +23,8 @@ class Author(models.Model):
         FieldPanel('name'),
     ]
 
-    api_fields = [
-        APIField('name'),
-    ]
-
     def __str__(self):
         return self.name
-
-    class Meta:
-        verbose_name_plural = 'Authors'
 
 @register_snippet
 class Category(models.Model):
@@ -45,7 +38,7 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = 'categories'
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -91,7 +84,7 @@ class BlogPage(Page):
             return gallery_item.image
         else:
             return None
-    
+
     api_fields = [
         APIField('publication_date'),
         APIField('introduction'),

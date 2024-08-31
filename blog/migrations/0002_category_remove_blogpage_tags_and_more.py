@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255)),
             ],
             options={
-                'verbose_name_plural': 'Categories',
+                'verbose_name_plural': 'categories',
             },
         ),
         migrations.RemoveField(

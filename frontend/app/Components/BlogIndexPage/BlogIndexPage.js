@@ -1,5 +1,3 @@
-'use client';
-
 import BlogCard from './BlogCard';
 import Categories from './Categories';
 
@@ -29,13 +27,7 @@ export default async function BlogIndexPage({ index, posts }) {
     <main className="bg-light_gray px-36 py-20">
       {index && (
         <div className="mb-8">
-          <h1 className="text-6xl text-black">
-            {index.title} <br />{' '}
-            <span className="text-blue_violet font-semibold">
-              Accessible & best SEO <br /> practices
-            </span>
-          </h1>
-          <div dangerouslySetInnerHTML={{ __html: index.introduction }}></div>
+          <h1 className="text-6xl text-black">{index.title}</h1>
         </div>
       )}
       <div className="flex flex-row justify-between mt-24">

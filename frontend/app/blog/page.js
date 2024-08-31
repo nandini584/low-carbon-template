@@ -18,7 +18,7 @@ export default async function Home() {
 
   // Fetch the BlogPages that are children of the BlogIndexPage instance
   const data = await fetch(
-    `http://127.0.0.1:8000/api/v2/pages/?${new URLSearchParams({
+    `http://localhost:8000/api/v2/pages/?${new URLSearchParams({
       type: 'blog.BlogPage',
       child_of: index.id.toString(),
       fields: ['publication_date', 'introduction'].join(','),

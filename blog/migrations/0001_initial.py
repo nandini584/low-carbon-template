@@ -26,9 +26,6 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
             ],
-            options={
-                'verbose_name_plural': 'Authors',
-            },
         ),
         migrations.CreateModel(
             name='BlogIndexPage',
