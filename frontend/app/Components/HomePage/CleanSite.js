@@ -18,7 +18,7 @@ const CleanSite = () => {
           ensuring that every site we build is optimized for energy efficiency
           and low environmental impact.
         </h4>
-        <button className="text-black bg-[#D6F7E7] py-2 px-10 rounded-md border border-[3px] border-black text-lg ">
+        <button className="text-black bg-mint_green py-2 px-10 rounded-md border border-[3px] border-black text-lg ">
           Get Access to Latest Blogs
         </button>
       </div>

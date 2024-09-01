@@ -1,5 +1,5 @@
-import React from 'react'
-import BlogCard from '../BlogIndexPage/BlogCard'
+import React from 'react';
+import BlogCard from '../BlogIndexPage/BlogCard';
 
 const LatestBlogs = () => {
   return (
@@ -8,12 +8,12 @@ const LatestBlogs = () => {
         Our Latest Blogs
       </h2>
       <div className="flex md:flex-row flex-col flex-wrap md:gap-12 gap-4">
-        <BlogCard/>
-        <BlogCard/>
-        <BlogCard/>
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LatestBlogs
+export default LatestBlogs;
