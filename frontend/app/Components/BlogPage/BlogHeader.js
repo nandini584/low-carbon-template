@@ -1,5 +1,3 @@
-import React from 'react';
-
 const BlogHeader = () => {
   return (
     <div className="bg-light_gray md:pl-36 pl-6 md:pr-96 md:pt-20 pt-4">

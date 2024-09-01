@@ -6,9 +6,9 @@ import LatestBlogs from './Components/HomePage/LatestBlogs';
 export default function Home() {
   return (
     <>
-      <HeroSection/>
-      <CleanSite/>
-      <LatestBlogs/>
+      <HeroSection />
+      <CleanSite />
+      <LatestBlogs />
     </>
   );
 }

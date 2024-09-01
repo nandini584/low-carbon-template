@@ -1,7 +1,3 @@
-// app/Components/Categories.tsx (or .js)
-'use client'; // Ensure this is a client component
-
-import React from 'react';
 import Category from './Category';
 
 const Categories = ({ categories }) => {

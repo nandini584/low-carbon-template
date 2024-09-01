@@ -1,4 +1,4 @@
-import BlogIndexPage from '../Components/BlogIndexPage/BlogIndexPage';
+import BlogIndexPage from '@/app/Components/BlogIndexPage/BlogIndexPage';
 
 export default async function Home() {
   // Fetch the BlogIndexPage's details
