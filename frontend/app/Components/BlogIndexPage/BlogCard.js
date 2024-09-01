@@ -13,7 +13,7 @@ const BlogCard = ({ title, publication_date, category, authors }) => {
         <span className="text-sm">{category}</span>
         <time className="text-sm">{publication_date}</time>
       </div>
-      <p className="text-gray-700 text-base">{authors}</p>
+      <p className="text-gray-700 md:text-base text-sm">{authors}</p>
     </section>
   );
 };
