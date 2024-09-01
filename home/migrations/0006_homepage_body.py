@@ -7,15 +7,23 @@ import wagtail.images.blocks
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('home', '0005_remove_homepage_heading_alter_homepage_introduction'),
+        ("home", "0005_remove_homepage_heading_alter_homepage_introduction"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='homepage',
-            name='body',
-            field=wagtail.fields.StreamField([('heading', wagtail.blocks.CharBlock(form_classname='title')), ('description', wagtail.blocks.RichTextBlock()), ('image', wagtail.images.blocks.ImageChooserBlock()), ('link', wagtail.blocks.PageChooserBlock()), ('link_text', wagtail.blocks.CharBlock())], blank=True),
+            model_name="homepage",
+            name="body",
+            field=wagtail.fields.StreamField(
+                [
+                    ("heading", wagtail.blocks.CharBlock(form_classname="title")),
+                    ("description", wagtail.blocks.RichTextBlock()),
+                    ("image", wagtail.images.blocks.ImageChooserBlock()),
+                    ("link", wagtail.blocks.PageChooserBlock()),
+                    ("link_text", wagtail.blocks.CharBlock()),
+                ],
+                blank=True,
+            ),
         ),
     ]

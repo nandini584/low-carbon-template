@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     "home",
     # "corsheaders",
     "rest_framework",
-    'wagtail.api.v2',
+    "wagtail.api.v2",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -59,7 +59,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
-    
 ]
 
 ROOT_URLCONF = "sustainablesite.urls"
@@ -168,3 +167,10 @@ WAGTAILSEARCH_BACKENDS = {
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"
+
+WAGTAIL_HEADLESS_PREVIEW = {
+    "CLIENT_URLS": {
+        "default": "{SITE_ROOT_URL}/api/draft",
+    },
+    "LIVE_PREVIEW": True,  # set to True to enable live preview functionality
+}

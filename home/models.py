@@ -11,26 +11,27 @@ from wagtail.images.blocks import ImageChooserBlock
 from wagtail.blocks import PageChooserBlock
 from wagtail.api import APIField
 
+
 class HomePage(Page):
     introduction = RichTextField()
-    body = StreamField([
-        ('heading', blocks.CharBlock(form_classname="title")),
-        ('description', blocks.RichTextBlock()),
-        ('image', ImageChooserBlock()),
-        ('link', PageChooserBlock()),
-        ('link_text', blocks.CharBlock())
-    ], blank=True)
+    body = StreamField(
+        [
+            ("heading", blocks.CharBlock(form_classname="title")),
+            ("description", blocks.RichTextBlock()),
+            ("image", ImageChooserBlock()),
+            ("link", PageChooserBlock()),
+            ("link_text", blocks.CharBlock()),
+        ],
+        blank=True,
+    )
 
-    api_fields = [
-        APIField('introduction'),
-        APIField('body')
-    ]
+    api_fields = [APIField("introduction"), APIField("body")]
 
     search_fields = Page.search_fields + [
-        index.SearchField('introduction'),
+        index.SearchField("introduction"),
     ]
 
     content_panels = Page.content_panels + [
-        FieldPanel('introduction'),
-        FieldPanel('body'),
+        FieldPanel("introduction"),
+        FieldPanel("body"),
     ]
