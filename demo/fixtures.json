@@ -1,0 +1,499 @@
+[
+  {
+    "model": "blog.author",
+    "pk": 1,
+    "fields": {
+      "name": "Roberta Johnson"
+    }
+  },
+  {
+    "model": "blog.author",
+    "pk": 2,
+    "fields": {
+      "name": "Muddy Waters"
+    }
+  },
+  {
+    "model": "blog.author",
+    "pk": 3,
+    "fields": {
+      "name": "Olivia Ava"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Sustainability"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Accessibility"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Django"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 4,
+    "fields": {
+      "name": "SEO"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Performance"
+    }
+  },
+  {
+    "model": "wagtail_headless_preview.pagepreview",
+    "pk": 1,
+    "fields": {
+      "token": "parent_id=1;page_type=home.HomePage:1skmqw:E4dVDUpIjXX2gLVmnAWwzYTV2aZDi9l_IIKyIeqVAo0",
+      "content_type": ["home", "homepage"],
+      "content_json": "{\"pk\": null, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 0, \"translation_key\": \"dba11455-ca4f-4432-874c-75c0be2a10aa\", \"locale\": 1, \"latest_revision\": null, \"live\": true, \"has_unpublished_changes\": false, \"first_published_at\": null, \"last_published_at\": null, \"live_revision\": null, \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"title\": \"Low-carbon Wagtail template\", \"draft_title\": \"Low-carbon Wagtail template\", \"slug\": \"low-carbon-wagtail-template\", \"content_type\": 32, \"url_path\": \"/low-carbon-wagtail-template/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"latest_revision_created_at\": null, \"alias_of\": null, \"introduction\": \"<p data-block-key=\\\"w9e7c\\\">A Wagtail website template optimized for energy efficiency and low carbon emissions.</p>\", \"body\": \"[]\", \"wagtail_admin_comments\": []}",
+      "created_at": "2024-09-01"
+    }
+  },
+  {
+    "model": "wagtailcore.locale",
+    "pk": 1,
+    "fields": {
+      "language_code": "en"
+    }
+  },
+  {
+    "model": "wagtailcore.site",
+    "pk": 2,
+    "fields": {
+      "hostname": "localhost",
+      "port": 3000,
+      "site_name": "",
+      "root_page": 3,
+      "is_default_site": true
+    }
+  },
+  {
+    "model": "wagtailcore.collection",
+    "pk": 1,
+    "fields": {
+      "path": "0001",
+      "depth": 1,
+      "numchild": 0,
+      "name": "Root"
+    }
+  },
+  {
+    "model": "wagtailcore.workflowpage",
+    "pk": 1,
+    "fields": {
+      "workflow": 1
+    }
+  },
+  {
+    "model": "wagtailcore.workflowtask",
+    "pk": 1,
+    "fields": {
+      "sort_order": 0,
+      "workflow": 1,
+      "task": 1
+    }
+  },
+  {
+    "model": "wagtailcore.task",
+    "pk": 1,
+    "fields": {
+      "name": "Moderators approval",
+      "content_type": ["wagtailcore", "groupapprovaltask"],
+      "active": true
+    }
+  },
+  {
+    "model": "wagtailcore.workflow",
+    "pk": 1,
+    "fields": {
+      "name": "Moderators approval",
+      "active": true
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Moderators",
+      "permissions": [
+        ["access_admin", "wagtailadmin", "admin"],
+        ["add_document", "wagtaildocs", "document"],
+        ["change_document", "wagtaildocs", "document"],
+        ["choose_document", "wagtaildocs", "document"],
+        ["delete_document", "wagtaildocs", "document"],
+        ["add_image", "wagtailimages", "image"],
+        ["change_image", "wagtailimages", "image"],
+        ["choose_image", "wagtailimages", "image"],
+        ["delete_image", "wagtailimages", "image"]
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "Editors",
+      "permissions": [
+        ["access_admin", "wagtailadmin", "admin"],
+        ["add_document", "wagtaildocs", "document"],
+        ["change_document", "wagtaildocs", "document"],
+        ["choose_document", "wagtaildocs", "document"],
+        ["delete_document", "wagtaildocs", "document"],
+        ["add_image", "wagtailimages", "image"],
+        ["change_image", "wagtailimages", "image"],
+        ["choose_image", "wagtailimages", "image"],
+        ["delete_image", "wagtailimages", "image"]
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$4dR2xPpUAnm06u1X3ZSvon$ZOBwPrDj5EDGEXRS0pEkmRfwwEKiiVp+zsnqxZcXB4o=",
+      "last_login": "2024-09-01T00:01:00.097Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-09-01T00:01:00.097Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "wagtailcore.pagelogentry",
+    "pk": 1,
+    "fields": {
+      "content_type": ["wagtailcore", "page"],
+      "label": "Welcome to your new Wagtail site!",
+      "action": "wagtail.delete",
+      "data": {},
+      "timestamp": "2024-09-01T15:49:09.891Z",
+      "uuid": "aceb84a7-e7fe-4d22-900f-9ed47faffa78",
+      "user": ["admin"],
+      "revision": null,
+      "content_changed": false,
+      "deleted": true,
+      "page": 2
+    }
+  },
+  {
+    "model": "wagtailcore.groupapprovaltask",
+    "pk": 1,
+    "fields": {
+      "groups": [["Moderators"]]
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 1,
+    "fields": {
+      "group": ["Moderators"],
+      "page": 1,
+      "permission": ["add_page", "wagtailcore", "page"]
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 2,
+    "fields": {
+      "group": ["Moderators"],
+      "page": 1,
+      "permission": ["change_page", "wagtailcore", "page"]
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 3,
+    "fields": {
+      "group": ["Moderators"],
+      "page": 1,
+      "permission": ["publish_page", "wagtailcore", "page"]
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 4,
+    "fields": {
+      "group": ["Editors"],
+      "page": 1,
+      "permission": ["add_page", "wagtailcore", "page"]
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 5,
+    "fields": {
+      "group": ["Editors"],
+      "page": 1,
+      "permission": ["change_page", "wagtailcore", "page"]
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 6,
+    "fields": {
+      "group": ["Moderators"],
+      "page": 1,
+      "permission": ["lock_page", "wagtailcore", "page"]
+    }
+  },
+  {
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 7,
+    "fields": {
+      "group": ["Moderators"],
+      "page": 1,
+      "permission": ["unlock_page", "wagtailcore", "page"]
+    }
+  },
+  {
+    "model": "wagtailcore.revision",
+    "pk": 1,
+    "fields": {
+      "content_type": ["home", "homepage"],
+      "base_content_type": ["wagtailcore", "page"],
+      "object_id": "3",
+      "created_at": "2024-09-01T15:51:14.327Z",
+      "user": ["admin"],
+      "object_str": "Low-carbon Wagtail template",
+      "content": {
+        "pk": 3,
+        "path": "00010001",
+        "depth": 2,
+        "numchild": 0,
+        "translation_key": "b4a6eb7f-6cb4-409a-b90c-b5810b40e962",
+        "locale": 1,
+        "latest_revision": null,
+        "live": true,
+        "has_unpublished_changes": false,
+        "first_published_at": null,
+        "last_published_at": null,
+        "live_revision": null,
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "title": "Low-carbon Wagtail template",
+        "draft_title": "Low-carbon Wagtail template",
+        "slug": "home",
+        "content_type": 32,
+        "url_path": "/home/",
+        "owner": 1,
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "latest_revision_created_at": null,
+        "alias_of": null,
+        "introduction": "<p data-block-key=\"w9e7c\">A Wagtail website template optimized for energy efficiency and low carbon emissions.</p>",
+        "body": "[]",
+        "wagtail_admin_comments": []
+      },
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.revision",
+    "pk": 2,
+    "fields": {
+      "content_type": ["blog", "blogindexpage"],
+      "base_content_type": ["wagtailcore", "page"],
+      "object_id": "4",
+      "created_at": "2024-09-01T15:51:40.650Z",
+      "user": ["admin"],
+      "object_str": "Blog",
+      "content": {
+        "pk": 4,
+        "path": "000100010001",
+        "depth": 3,
+        "numchild": 0,
+        "translation_key": "e36e94e3-5f7d-4dc5-847d-4c1f1422ed97",
+        "locale": 1,
+        "latest_revision": null,
+        "live": true,
+        "has_unpublished_changes": false,
+        "first_published_at": null,
+        "last_published_at": null,
+        "live_revision": null,
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "title": "Blog",
+        "draft_title": "Blog",
+        "slug": "blog",
+        "content_type": 29,
+        "url_path": "/home/blog/",
+        "owner": 1,
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "latest_revision_created_at": null,
+        "alias_of": null,
+        "wagtail_admin_comments": []
+      },
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 1,
+    "fields": {
+      "path": "0001",
+      "depth": 1,
+      "numchild": 1,
+      "translation_key": "a7d82770-40c9-4a4b-af1e-f4839c14473a",
+      "locale": 1,
+      "latest_revision": null,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": null,
+      "last_published_at": null,
+      "live_revision": null,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "Root",
+      "draft_title": "Root",
+      "slug": "root",
+      "content_type": ["wagtailcore", "page"],
+      "url_path": "/",
+      "owner": null,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": null,
+      "alias_of": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 3,
+    "fields": {
+      "path": "00010001",
+      "depth": 2,
+      "numchild": 1,
+      "translation_key": "b4a6eb7f-6cb4-409a-b90c-b5810b40e962",
+      "locale": 1,
+      "latest_revision": 1,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2024-09-01T15:51:14.361Z",
+      "last_published_at": "2024-09-01T15:51:14.361Z",
+      "live_revision": 1,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "Low-carbon Wagtail template",
+      "draft_title": "Low-carbon Wagtail template",
+      "slug": "home",
+      "content_type": ["home", "homepage"],
+      "url_path": "/home/",
+      "owner": ["admin"],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2024-09-01T15:51:14.327Z",
+      "alias_of": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 4,
+    "fields": {
+      "path": "000100010001",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "e36e94e3-5f7d-4dc5-847d-4c1f1422ed97",
+      "locale": 1,
+      "latest_revision": 2,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2024-09-01T15:51:40.680Z",
+      "last_published_at": "2024-09-01T15:51:40.680Z",
+      "live_revision": 2,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "Blog",
+      "draft_title": "Blog",
+      "slug": "blog",
+      "content_type": ["blog", "blogindexpage"],
+      "url_path": "/home/blog/",
+      "owner": ["admin"],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2024-09-01T15:51:40.650Z",
+      "alias_of": null
+    }
+  },
+
+  {
+    "model": "wagtailusers.userprofile",
+    "pk": 1,
+    "fields": {
+      "user": ["admin"],
+      "submitted_notifications": true,
+      "approved_notifications": true,
+      "rejected_notifications": true,
+      "updated_comments_notifications": true,
+      "preferred_language": "",
+      "current_time_zone": "",
+      "avatar": "",
+      "dismissibles": {
+        "help": true,
+        "whats-new-in-wagtail-6.2": true,
+        "editor-guide": true
+      },
+      "theme": "system",
+      "density": "default"
+    }
+  },
+  {
+    "model": "home.homepage",
+    "pk": 3,
+    "fields": {
+      "introduction": "<p data-block-key=\"w9e7c\">A Wagtail website template optimized for energy efficiency and low carbon emissions.</p>",
+      "body": "[]"
+    }
+  },
+  {
+    "model": "blog.blogindexpage",
+    "pk": 4,
+    "fields": {}
+  }
+]

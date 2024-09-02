@@ -1,19 +1,14 @@
-from django import forms
 from django.db import models
-
-from modelcluster.fields import ParentalKey, ParentalManyToManyField
-from wagtail.models import Page, Orderable
-from wagtail.fields import RichTextField, StreamField
-from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
-from wagtail.search import index
-from wagtail import blocks
-from modelcluster.contrib.taggit import ClusterTaggableManager
-from taggit.models import TaggedItemBase
-from wagtail.snippets.models import register_snippet
-from wagtail.images.blocks import ImageChooserBlock
-
-from wagtail.api import APIField
 from rest_framework import serializers
+from wagtail import blocks
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from wagtail.api import APIField
+from wagtail.fields import RichTextField, StreamField
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.models import Page
+from wagtail.search import index
+from wagtail.snippets.models import register_snippet
+from wagtail_headless_preview.models import HeadlessMixin
 
 
 @register_snippet
@@ -43,40 +38,36 @@ class Category(models.Model):
         verbose_name_plural = "categories"
 
 
+class AuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+        fields = ["name"]
+
+
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ["name"]
 
 
-class BlogIndexPage(Page):
+class BlogIndexPage(HeadlessMixin, Page):
+    parent_page_types = ["home.HomePage"]
     subpage_types = ["blog.BlogPage"]
+    max_count = 1
 
 
-class BlogPageTag(TaggedItemBase):  # do it with snnipet
-    content_object = ParentalKey(
-        "BlogPage", related_name="tagged_items", on_delete=models.CASCADE
-    )
+class BlogPage(HeadlessMixin, Page):
+    parent_page_types = ["blog.BlogIndexPage"]
 
-
-class BlogPage(Page):
     publication_date = models.DateField("Post date")
     introduction = RichTextField()
-    authors = models.ForeignKey(
+    author = models.ForeignKey(
         "blog.Author",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
     )
-
-    body = StreamField(
-        [
-            ("image", ImageChooserBlock()),
-            ("paragraph", blocks.RichTextBlock()),  # add embedblock and blockquote
-        ]
-    )
-
     category = models.ForeignKey(
         "blog.Category",
         null=True,
@@ -84,19 +75,19 @@ class BlogPage(Page):
         related_name="+",
     )
 
-    def main_image(self):
-        gallery_item = self.gallery_images.first()
-        if gallery_item:
-            return gallery_item.image
-        else:
-            return None
+    body = StreamField(
+        [
+            ("image", ImageChooserBlock()),
+            ("paragraph", blocks.RichTextBlock()),
+        ]
+    )
 
     api_fields = [
         APIField("publication_date"),
         APIField("introduction"),
-        APIField("authors"),
-        APIField("body"),
+        APIField("author", serializer=AuthorSerializer()),
         APIField("category", serializer=CategorySerializer()),
+        APIField("body"),
     ]
 
     search_fields = Page.search_fields + [
@@ -108,29 +99,11 @@ class BlogPage(Page):
         MultiFieldPanel(
             [
                 FieldPanel("publication_date"),
-                FieldPanel("authors", widget=forms.CheckboxSelectMultiple),
+                FieldPanel("author"),
+                FieldPanel("category"),
             ],
             heading="Blog information",
         ),
         FieldPanel("introduction"),
         FieldPanel("body"),
-        FieldPanel("category"),
-        InlinePanel("gallery_images", label="Gallery images"),
-    ]
-
-    parent_page_types = ["blog.BlogIndexPage"]
-
-
-class BlogPageGalleryImage(Orderable):
-    page = ParentalKey(
-        BlogPage, on_delete=models.CASCADE, related_name="gallery_images"
-    )
-    image = models.ForeignKey(
-        "wagtailimages.Image", on_delete=models.CASCADE, related_name="+"
-    )
-    caption = models.CharField(blank=True, max_length=250)
-
-    panels = [
-        FieldPanel("image"),
-        FieldPanel("caption"),
     ]

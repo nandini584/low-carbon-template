@@ -1,26 +1,32 @@
-from django.db import models
-
-from wagtail.images.models import Image, AbstractImage, AbstractRendition
-from wagtail.models import Page
-from wagtail.fields import RichTextField, StreamField
-from wagtail.admin.panels import FieldPanel
-from wagtail.search import index
-
 from wagtail import blocks
-from wagtail.images.blocks import ImageChooserBlock
-from wagtail.blocks import PageChooserBlock
+from wagtail.admin.panels import FieldPanel
 from wagtail.api import APIField
+from wagtail.blocks import PageChooserBlock
+from wagtail.fields import RichTextField, StreamField
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.models import Page
+from wagtail.search import index
+from wagtail_headless_preview.models import HeadlessMixin
 
 
-class HomePage(Page):
+class HomePage(HeadlessMixin, Page):
+    max_count = 1
+
     introduction = RichTextField()
     body = StreamField(
         [
-            ("heading", blocks.CharBlock(form_classname="title")),
-            ("description", blocks.RichTextBlock()),
-            ("image", ImageChooserBlock()),
-            ("link", PageChooserBlock()),
-            ("link_text", blocks.CharBlock()),
+            (
+                "section",
+                blocks.StructBlock(
+                    [
+                        ("heading", blocks.CharBlock(form_classname="title")),
+                        ("description", blocks.RichTextBlock()),
+                        ("image", ImageChooserBlock()),
+                        ("link", PageChooserBlock()),
+                        ("link_text", blocks.CharBlock()),
+                    ]
+                ),
+            ),
         ],
         blank=True,
     )
