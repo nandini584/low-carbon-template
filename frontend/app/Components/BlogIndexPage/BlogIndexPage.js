@@ -21,13 +21,13 @@ async function fetchCategories() {
   }
 }
 
-export default async function BlogIndexPage({ index, posts }) {
+export default async function BlogIndexPage({ page, posts }) {
   const categories = await fetchCategories();
   return (
     <main className="bg-light_gray px-36 py-20">
-      {index && (
+      {page && (
         <div className="mb-8">
-          <h1 className="text-6xl text-black">{index.title}</h1>
+          <h1 className="text-6xl text-black">{page.title}</h1>
         </div>
       )}
       <div className="flex flex-row justify-between mt-24">

@@ -2,11 +2,11 @@ import BlogHeader from './BlogHeader';
 import BlogContent from './BlogContent';
 import RelatedBlogs from './RelatedBlogs';
 
-const BlogPage = () => {
+const BlogPage = ({ page }) => {
   return (
     <>
-      <BlogHeader />
-      <BlogContent />
+      <BlogHeader page={page} />
+      <BlogContent page={page} />
       <RelatedBlogs />
     </>
   );
