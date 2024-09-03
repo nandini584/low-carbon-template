@@ -172,5 +172,6 @@ WAGTAIL_HEADLESS_PREVIEW = {
     "CLIENT_URLS": {
         "default": "{SITE_ROOT_URL}/api/draft",
     },
+    "SERVE_BASE_URL": "http://localhost:3000",
     "LIVE_PREVIEW": True,  # set to True to enable live preview functionality
 }
