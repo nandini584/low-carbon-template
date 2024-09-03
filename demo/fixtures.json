@@ -56,16 +56,6 @@
     }
   },
   {
-    "model": "wagtail_headless_preview.pagepreview",
-    "pk": 1,
-    "fields": {
-      "token": "parent_id=1;page_type=home.HomePage:1skmqw:E4dVDUpIjXX2gLVmnAWwzYTV2aZDi9l_IIKyIeqVAo0",
-      "content_type": ["home", "homepage"],
-      "content_json": "{\"pk\": null, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 0, \"translation_key\": \"dba11455-ca4f-4432-874c-75c0be2a10aa\", \"locale\": 1, \"latest_revision\": null, \"live\": true, \"has_unpublished_changes\": false, \"first_published_at\": null, \"last_published_at\": null, \"live_revision\": null, \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"title\": \"Low-carbon Wagtail template\", \"draft_title\": \"Low-carbon Wagtail template\", \"slug\": \"low-carbon-wagtail-template\", \"content_type\": 32, \"url_path\": \"/low-carbon-wagtail-template/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"latest_revision_created_at\": null, \"alias_of\": null, \"introduction\": \"<p data-block-key=\\\"w9e7c\\\">A Wagtail website template optimized for energy efficiency and low carbon emissions.</p>\", \"body\": \"[]\", \"wagtail_admin_comments\": []}",
-      "created_at": "2024-09-01"
-    }
-  },
-  {
     "model": "wagtailcore.locale",
     "pk": 1,
     "fields": {
@@ -167,7 +157,7 @@
     "pk": 1,
     "fields": {
       "password": "pbkdf2_sha256$870000$4dR2xPpUAnm06u1X3ZSvon$ZOBwPrDj5EDGEXRS0pEkmRfwwEKiiVp+zsnqxZcXB4o=",
-      "last_login": "2024-09-01T00:01:00.097Z",
+      "last_login": "2024-09-03T06:37:59.449Z",
       "is_superuser": true,
       "username": "admin",
       "first_name": "",
@@ -178,23 +168,6 @@
       "date_joined": "2024-09-01T00:01:00.097Z",
       "groups": [],
       "user_permissions": []
-    }
-  },
-  {
-    "model": "wagtailcore.pagelogentry",
-    "pk": 1,
-    "fields": {
-      "content_type": ["wagtailcore", "page"],
-      "label": "Welcome to your new Wagtail site!",
-      "action": "wagtail.delete",
-      "data": {},
-      "timestamp": "2024-09-01T15:49:09.891Z",
-      "uuid": "aceb84a7-e7fe-4d22-900f-9ed47faffa78",
-      "user": ["admin"],
-      "revision": null,
-      "content_changed": false,
-      "deleted": true,
-      "page": 2
     }
   },
   {
@@ -360,6 +333,156 @@
     }
   },
   {
+    "model": "wagtailcore.revision",
+    "pk": 3,
+    "fields": {
+      "content_type": ["blog", "blogpage"],
+      "base_content_type": ["wagtailcore", "page"],
+      "object_id": "5",
+      "created_at": "2024-09-03T06:51:35.380Z",
+      "user": ["admin"],
+      "object_str": "My first post",
+      "content": {
+        "pk": 5,
+        "path": "0001000100010001",
+        "depth": 4,
+        "numchild": 0,
+        "translation_key": "a816f087-48d7-40cd-a821-7315558fea4f",
+        "locale": 1,
+        "latest_revision": null,
+        "live": true,
+        "has_unpublished_changes": false,
+        "first_published_at": null,
+        "last_published_at": null,
+        "live_revision": null,
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "title": "My first post",
+        "draft_title": "My first post",
+        "slug": "my-first-post",
+        "content_type": 31,
+        "url_path": "/home/blog/my-first-post/",
+        "owner": 1,
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "latest_revision_created_at": null,
+        "alias_of": null,
+        "publication_date": "2024-09-01",
+        "introduction": "<p data-block-key=\"n5p3t\">Hello, World!</p>",
+        "author": 1,
+        "category": 3,
+        "body": "[{\"type\": \"paragraph\", \"value\": \"<p data-block-key=\\\"2i6p2\\\">Our new blog\\u2019s first post, starting our journey covering topics from sustainability to accessibility.</p>\", \"id\": \"42514dc2-4abc-4f4a-8b8f-2dee77faa3c2\"}]",
+        "wagtail_admin_comments": []
+      },
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.revision",
+    "pk": 4,
+    "fields": {
+      "content_type": ["blog", "blogpage"],
+      "base_content_type": ["wagtailcore", "page"],
+      "object_id": "6",
+      "created_at": "2024-09-03T06:52:54.334Z",
+      "user": ["admin"],
+      "object_str": "Sustainable Web Development",
+      "content": {
+        "pk": 6,
+        "path": "0001000100010002",
+        "depth": 4,
+        "numchild": 0,
+        "translation_key": "2b317bda-7023-4539-aaf8-39d1ecbb38dc",
+        "locale": 1,
+        "latest_revision": null,
+        "live": true,
+        "has_unpublished_changes": false,
+        "first_published_at": null,
+        "last_published_at": null,
+        "live_revision": null,
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "title": "Sustainable Web Development",
+        "draft_title": "Sustainable Web Development",
+        "slug": "sustainable-web-development",
+        "content_type": 31,
+        "url_path": "/home/blog/sustainable-web-development/",
+        "owner": 1,
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "latest_revision_created_at": null,
+        "alias_of": null,
+        "publication_date": "2024-09-01",
+        "introduction": "<p data-block-key=\"d2rrh\">Lots to learn</p>",
+        "author": null,
+        "category": 1,
+        "body": "[{\"type\": \"paragraph\", \"value\": \"<p data-block-key=\\\"9jm3y\\\">It\\u2019s a whole new angle on creating websites.</p>\", \"id\": \"f20732ce-6b8d-4084-bcaa-a4ebdac6d2fb\"}]",
+        "wagtail_admin_comments": []
+      },
+      "approved_go_live_at": null
+    }
+  },
+  {
+    "model": "wagtailcore.revision",
+    "pk": 5,
+    "fields": {
+      "content_type": ["blog", "blogpage"],
+      "base_content_type": ["wagtailcore", "page"],
+      "object_id": "7",
+      "created_at": "2024-09-03T06:53:38.891Z",
+      "user": ["admin"],
+      "object_str": "Faster websites",
+      "content": {
+        "pk": 7,
+        "path": "0001000100010003",
+        "depth": 4,
+        "numchild": 0,
+        "translation_key": "829f432b-ba84-439a-b6cc-958548ce49a8",
+        "locale": 1,
+        "latest_revision": null,
+        "live": true,
+        "has_unpublished_changes": false,
+        "first_published_at": null,
+        "last_published_at": null,
+        "live_revision": null,
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "title": "Faster websites",
+        "draft_title": "Faster websites",
+        "slug": "faster-websites",
+        "content_type": 31,
+        "url_path": "/home/blog/faster-websites/",
+        "owner": 1,
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "latest_revision_created_at": null,
+        "alias_of": null,
+        "publication_date": "2024-09-01",
+        "introduction": "<p data-block-key=\"egqq7\">Usually faster means less energy use too.</p>",
+        "author": 2,
+        "category": 5,
+        "body": "[{\"type\": \"paragraph\", \"value\": \"<p data-block-key=\\\"lj4lc\\\">We\\u2019ll review how true this is in practice.</p>\", \"id\": \"9de9a1d6-4d27-4f9b-a5d2-becd71b22e2f\"}]",
+        "wagtail_admin_comments": []
+      },
+      "approved_go_live_at": null
+    }
+  },
+  {
     "model": "wagtailcore.page",
     "pk": 1,
     "fields": {
@@ -433,7 +556,7 @@
     "fields": {
       "path": "000100010001",
       "depth": 3,
-      "numchild": 0,
+      "numchild": 3,
       "translation_key": "e36e94e3-5f7d-4dc5-847d-4c1f1422ed97",
       "locale": 1,
       "latest_revision": 2,
@@ -461,7 +584,108 @@
       "alias_of": null
     }
   },
-
+  {
+    "model": "wagtailcore.page",
+    "pk": 5,
+    "fields": {
+      "path": "0001000100010001",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "a816f087-48d7-40cd-a821-7315558fea4f",
+      "locale": 1,
+      "latest_revision": 3,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2024-09-03T06:51:35.415Z",
+      "last_published_at": "2024-09-03T06:51:35.415Z",
+      "live_revision": 3,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "My first post",
+      "draft_title": "My first post",
+      "slug": "my-first-post",
+      "content_type": ["blog", "blogpage"],
+      "url_path": "/home/blog/my-first-post/",
+      "owner": ["admin"],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2024-09-03T06:51:35.380Z",
+      "alias_of": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 6,
+    "fields": {
+      "path": "0001000100010002",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "2b317bda-7023-4539-aaf8-39d1ecbb38dc",
+      "locale": 1,
+      "latest_revision": 4,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2024-09-03T06:52:54.368Z",
+      "last_published_at": "2024-09-03T06:52:54.368Z",
+      "live_revision": 4,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "Sustainable Web Development",
+      "draft_title": "Sustainable Web Development",
+      "slug": "sustainable-web-development",
+      "content_type": ["blog", "blogpage"],
+      "url_path": "/home/blog/sustainable-web-development/",
+      "owner": ["admin"],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2024-09-03T06:52:54.334Z",
+      "alias_of": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 7,
+    "fields": {
+      "path": "0001000100010003",
+      "depth": 4,
+      "numchild": 0,
+      "translation_key": "829f432b-ba84-439a-b6cc-958548ce49a8",
+      "locale": 1,
+      "latest_revision": 5,
+      "live": true,
+      "has_unpublished_changes": false,
+      "first_published_at": "2024-09-03T06:53:38.922Z",
+      "last_published_at": "2024-09-03T06:53:38.922Z",
+      "live_revision": 5,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "Faster websites",
+      "draft_title": "Faster websites",
+      "slug": "faster-websites",
+      "content_type": ["blog", "blogpage"],
+      "url_path": "/home/blog/faster-websites/",
+      "owner": ["admin"],
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2024-09-03T06:53:38.891Z",
+      "alias_of": null
+    }
+  },
   {
     "model": "wagtailusers.userprofile",
     "pk": 1,
@@ -489,6 +713,39 @@
     "fields": {
       "introduction": "<p data-block-key=\"w9e7c\">A Wagtail website template optimized for energy efficiency and low carbon emissions.</p>",
       "body": "[]"
+    }
+  },
+  {
+    "model": "blog.blogpage",
+    "pk": 5,
+    "fields": {
+      "publication_date": "2024-09-01",
+      "introduction": "<p data-block-key=\"n5p3t\">Hello, World!</p>",
+      "author": 1,
+      "category": 3,
+      "body": "[{\"type\": \"paragraph\", \"value\": \"<p data-block-key=\\\"2i6p2\\\">Our new blog\\u2019s first post, starting our journey covering topics from sustainability to accessibility.</p>\", \"id\": \"42514dc2-4abc-4f4a-8b8f-2dee77faa3c2\"}]"
+    }
+  },
+  {
+    "model": "blog.blogpage",
+    "pk": 6,
+    "fields": {
+      "publication_date": "2024-09-01",
+      "introduction": "<p data-block-key=\"d2rrh\">Lots to learn</p>",
+      "author": null,
+      "category": 1,
+      "body": "[{\"type\": \"paragraph\", \"value\": \"<p data-block-key=\\\"9jm3y\\\">It\\u2019s a whole new angle on creating websites.</p>\", \"id\": \"f20732ce-6b8d-4084-bcaa-a4ebdac6d2fb\"}]"
+    }
+  },
+  {
+    "model": "blog.blogpage",
+    "pk": 7,
+    "fields": {
+      "publication_date": "2024-09-01",
+      "introduction": "<p data-block-key=\"egqq7\">Usually faster means less energy use too.</p>",
+      "author": 2,
+      "category": 5,
+      "body": "[{\"type\": \"paragraph\", \"value\": \"<p data-block-key=\\\"lj4lc\\\">We\\u2019ll review how true this is in practice.</p>\", \"id\": \"9de9a1d6-4d27-4f9b-a5d2-becd71b22e2f\"}]"
     }
   },
   {

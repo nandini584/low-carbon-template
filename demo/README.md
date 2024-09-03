@@ -6,6 +6,11 @@ Delete this folder when setting up a new site with our template
 
 To load the demo data, use:
 
+```bash
+./manage.py shell -c "from wagtail.models import Page, Site; Site.objects.get(hostname='localhost').delete(); Page.objects.get(title='Welcome to your new Wagtail site!').delete()"
+./manage.py loaddata demo/fixtures.json
+```
+
 To save new demo data, use:
 
 ```bash
