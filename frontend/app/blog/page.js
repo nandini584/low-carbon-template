@@ -7,11 +7,6 @@ export default async function Home() {
       type: 'blog.BlogIndexPage',
       slug: 'blog',
     })}`,
-    {
-      headers: {
-        Accept: 'application/json',
-      },
-    },
   ).then((response) => response.json());
 
   const index = indexPages.items[0];

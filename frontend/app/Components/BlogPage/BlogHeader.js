@@ -5,7 +5,9 @@ const BlogHeader = ({ page }) => {
         {page.title}
       </h1>
       <div className="flex flex-row items-center justify-between md:py-10 py-5 pr-6">
-        <p className="text-black md:text-lg text-base">{page.author.name}</p>
+        {page.author ? (
+          <p className="text-black md:text-lg text-base">{page.author.name}</p>
+        ) : null}
         <time className="md:text-lg text-black text-base">
           {page.publication_date}
         </time>
