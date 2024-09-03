@@ -12,6 +12,10 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: ruff check --output-format=github .
+      - run: ./manage.py migrate
+      - run: ./manage.py shell -c "from wagtail.models import Page, Site; Site.objects.get(hostname='localhost').delete(); Page.objects.get(title='Welcome to your new Wagtail site!').delete()"
+      - run: ./manage.py loaddata demo/fixtures.json
+      - run: ./manage.py runserver 0:8000 &
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
